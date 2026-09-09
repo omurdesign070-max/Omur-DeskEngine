@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Omur Desk Engine — unlimited browser-based stock metadata generator.">
+  <title>Omur Desk Engine — Metadata Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="logo" href="#"><span>O</span> Omur Desk Engine</a>
+  <div class="top-actions">
+    <span class="status"><i></i> Unlimited Mode</span>
+    <button id="themeBtn" class="icon-btn" aria-label="Toggle theme">☾</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="eyebrow">OMUR DESK ENGINE • STOCK WORKFLOW</div>
+    <h1>Generate metadata.<br><em>Without limits.</em></h1>
+    <p>Fast titles, descriptions and stock-ready keyword sets for your images. Everything in this version runs locally in your browser.</p>
+  </section>
+
+  <section class="card">
+    <div id="dropZone" class="drop-zone">
+      <input id="fileInput" type="file" accept="image/jpeg,image/png,image/webp" multiple>
+      <div class="upload-circle">↑</div>
+      <h2>Drop images here</h2>
+      <p>or click to browse • JPG, PNG, WebP • unlimited files per session</p>
+    </div>
+
+    <div id="queue" class="queue hidden"></div>
+
+    <div class="settings-grid">
+      <label>Platform
+        <select id="platform">
+          <option value="adobe">Adobe Stock</option>
+          <option value="freepik">Freepik</option>
+          <option value="vecteezy">Vecteezy</option>
+          <option value="shutterstock">Shutterstock</option>
+        </select>
+      </label>
+      <label>Content category
+        <select id="category">
+          <option value="auto">Auto from filename</option>
+          <option value="food">Food & Beverage</option>
+          <option value="business">Business</option>
+          <option value="technology">Technology</option>
+          <option value="nature">Nature & Wildlife</option>
+          <option value="travel">Travel</option>
+          <option value="fashion">Fashion</option>
+          <option value="product">Product</option>
+          <option value="background">Background</option>
+          <option value="abstract">Abstract</option>
+          <option value="seasonal">Seasonal / Holiday</option>
+        </select>
+      </label>
+      <label>Keywords
+        <select id="keywordCount">
+          <option>25</option><option selected>35</option><option>40</option><option>50</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="options">
+      <label><input id="commercial" type="checkbox" checked> Commercial-friendly wording</label>
+      <label><input id="ai" type="checkbox"> AI-generated</label>
+      <button id="generateBtn" class="generate">Generate Metadata <span>→</span></button>
+    </div>
+    <p class="micro">Unlimited generation means there is no built-in generation counter or daily limit. This browser-only version does not call an external AI service.</p>
+  </section>
+
+  <section id="resultsSection" class="results hidden">
+    <div class="results-title">
+      <div><div class="eyebrow">OUTPUT</div><h2>Metadata Library</h2></div>
+      <div class="buttons"><button id="copyAll" class="secondary">Copy all</button><button id="downloadCsv" class="generate">Download CSV</button></div>
+    </div>
+    <div id="results"></div>
+  </section>
+
+  <section class="features">
+    <div><b>∞</b><h3>Unlimited</h3><p>No generation counter in the browser.</p></div>
+    <div><b>⚡</b><h3>Fast</h3><p>Metadata appears instantly after generation.</p></div>
+    <div><b>🔒</b><h3>Private</h3><p>Your images stay on your device in this version.</p></div>
+  </section>
+</main>
+
+<footer>© <span id="year"></span> Omur Desk Engine • Built for stock creators</footer>
+<script src="app.js"></script>
+</body>
+</html>
